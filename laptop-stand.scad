@@ -7,7 +7,7 @@ $fn= $preview ? 32 : 64;               // render more accurately than preview
 length = 100;                           // length of angled platform in mm
 height = 105;                           // height of platform in mm  ==> 100
 angle = 37;                             // angle of platform in degrees
-width = 14;                             // width in mm
+width = 10;                             // width in mm
 slotHeight = 11;                        // slot height in mm
 thickness = 6.0;                        // thickness of slot support
 laptopDistance = 150;                   // distance between supports for laptop
@@ -125,7 +125,6 @@ module crossbar() {
             plank(thickness, crossbarWidth, width/4);
 
         // PINS
-        // Laptop
         translate([-thickness*2 + .2, thickness/2 + pinFromEnd, width/8]) {
             rotate([0, 90, 0])
                 cylinder(h=thickness, d=width/3);
@@ -133,15 +132,6 @@ module crossbar() {
                 rotate([0, 90, 0])
                     cylinder(h=thickness, d=width/3);
         }
-
-        // // Tablet
-        // translate([-thickness*2 + .2, thickness/2 + pinFromEnd + (laptopDistance - tabletDistance)/2, width/8]) {
-        //     rotate([0, 90, 0])
-        //         cylinder(h=thickness, d=width/3);
-        //     translate([0, tabletDistance, 0])
-        //         rotate([0, 90, 0])
-        //             cylinder(h=thickness, d=width/3);
-        // }
 
     }
 }
